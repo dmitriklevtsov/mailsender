@@ -1,4 +1,6 @@
 import smtplib
+from dotenv import load_dotenv
+
 
 str = """\n\nПривет, %friend_name%! %my_name% приглашает тебя на сайт %website%!
 
@@ -32,8 +34,10 @@ Content-Type: text/plain; charset="UTF-8";""".format(a=myname, b=friendname) + s
 
 letter = letter.encode("UTF-8")
 
-login = "***************"
-password = "************"
+load_dotenv()
+
+login = os.environ.get("LOGIN")
+password = os.environ.get("PASSWORD")
 
 server = smtplib.SMTP_SSL('smtp.yandex.ru:465')
 server.login(login, password)
