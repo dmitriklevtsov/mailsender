@@ -1,7 +1,6 @@
 import smtplib
 from dotenv import load_dotenv
 
-
 str = """\n\nПривет, %friend_name%! %my_name% приглашает тебя на сайт %website%!
 
 %website% — это новая версия онлайн-курса по программированию. 
